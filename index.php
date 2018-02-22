@@ -15,18 +15,18 @@
 
 	echo "<br>";
 	if ($date > $tar)
-		echo "3) The future"."<br>";
+		echo "3) date compared to tar: The future"."<br>";
 	else if ($date < $tar)
-		echo "3) The past"."<br>";
+		echo "3) date compared to tar: The past"."<br>";
 	else
-		echo "3) Oops"."<br>";
+		echo "3) date compared to tar: Oops"."<br>";
 
 	echo "<br>";
 
 	echo "4) ";
 
 	$i = strpos($date, "/") . ", ". strpos($date, "/", 5);
-	echo $i;
+	echo "Positions at: ".$i;
 
 	echo "<br><br>";
 
@@ -38,9 +38,7 @@
 	echo "5) ";
 
 	$date = explode(" ", $date);
-	print_r($date);
 
-	echo "<br>";
 	echo "Number of 'words': ".sizeof($date);
 
 	echo "<br><br>";
@@ -64,11 +62,24 @@
 	echo "8) ";
 	$date = implode("/", $date);
 	$partDate = substr($date, -2);
-	echo $partDate;
+	echo "Last two characters of date: ".$partDate;
 
 	echo "<br><br>";
 
 	echo "9) ";
+	$date = explode("/", $date);
+	print_r($date);
 
-	
+	echo "<br><br>";
+
+	echo "10) ";
+
+	foreach ($year as $value) 
+	{
+		if ((((int)$year % 4) == 0) && ((((int)$year % 100) != 0) || (((int)$year % 400) == 0)))
+			echo "True <br>";
+		else
+			echo "False <br>";
+	}
+
 ?>
